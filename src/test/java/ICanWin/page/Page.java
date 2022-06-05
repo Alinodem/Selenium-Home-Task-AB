@@ -15,7 +15,6 @@ public class Page extends AbstractPage {
     public WebElement newPasteTextArea;
     @FindBy (id="postform-name")
     public WebElement pasteName;
-
     @FindBy (xpath="//select[@id='postform-expiration']/..")
     public WebElement dropdown;
 
@@ -24,32 +23,28 @@ public class Page extends AbstractPage {
 
     @FindBy (xpath="//button[text()='Create New Paste']")
     public WebElement saveButton;
-
     public Page (WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     public Page cookieAgree () {
         new WebDriverWait(driver, Duration.ofSeconds(40)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='AGREE']")));
         WebElement agreeBtn = driver.findElement(By.xpath("//button[text()='AGREE']"));
         agreeBtn.click();
         return this;
     }
-
     public Page fillText (String text) {
         newPasteTextArea.sendKeys(text);
         return this;
     }
-
     public Page setExpiration (String text) {
         new WebDriverWait(driver, Duration.ofSeconds(40)).until(ExpectedConditions.elementToBeClickable(dropdown));
         Actions actions = new Actions(driver);
         actions.moveToElement(dropdown);
         actions.perform();
         dropdown.click();
-        WebElement option10 = driver.findElement(By.xpath("//li[text()='10 Minutes']"));
+        WebElement option10 = driver.findElement(By.xpath("//li[text()='"+text+"']"));
         option10.click();
         return this;
     }
@@ -59,20 +54,21 @@ public class Page extends AbstractPage {
         actions.moveToElement(dropdownbash);
         actions.perform();
         dropdownbash.click();
-        WebElement bash = driver.findElement(By.xpath("//li[text()='Bash']"));
+        WebElement bash = driver.findElement(By.xpath("//li[text()='"+text+"']"));
         bash.click();
         return this;
     }
-
     public Page fillName (String text) {
         pasteName.sendKeys(text);
         return this;
     }
     public Page save () {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(saveButton);
+        actions.perform();
         saveButton.click();
         return this;
     }
-
     @Override
     public Page openPage() {
 

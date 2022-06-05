@@ -9,22 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 public class TextPaste extends AbstractPage {
-
     @FindBy(xpath="//div[@class='info-top']/h1")
     public WebElement title;
     @FindBy (xpath="//*[@class='expire']")
     public WebElement time;
     @FindBy (xpath="//ol[@class='bash']//*[text()='git config']")
     public WebElement bash;
-
     @FindBy (xpath="//*[@class='textarea -raw js-paste-raw']")
     public WebElement text;
-
-//    new WebDriverWait(driver, Duration.ofSeconds(40)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='info-top']/h1")));
-//    WebElement title = driver.findElement(By.xpath("//div[@class='info-top']/h1"));
-//    String time = driver.findElement(By.xpath("//*[@class='expire']")).getText().trim();
-//    WebElement text = driver.findElement(By.xpath("//*[@class='de1']"));
-
     public TextPaste(WebDriver driver) {
         super(driver);
     }

@@ -20,17 +20,13 @@ public class ICanWin_BringItOn
      */
 
     private WebDriver driver;
-
     @BeforeMethod (alwaysRun = true)
     public void browserSetup () {
         ChromeOptions options = new ChromeOptions();
-        //options.add_experimental_option("excludeSwitches", ["enable-automation"]);
-        //options.add_experimental_option('useAutomationExtension', False);
         options.addArguments("--disable-blink-features=AutomationControlled");
 
         driver = new ChromeDriver(options);
     }
-
     @Test(description = "I Can Win")
 
     public void iCanWin ()
