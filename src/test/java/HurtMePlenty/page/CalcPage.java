@@ -15,16 +15,16 @@ public class CalcPage extends AbstractPage {
     public CalcPage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath = "//input[@id='input_85']")
+    @FindBy(xpath = "//input[@id='input_86']")
     public WebElement searchNumOfInst;
 
-    @FindBy(xpath = "//md-select-value[@id='select_value_label_80']")
+    @FindBy(xpath = "//md-select-value[@id='select_value_label_81']")
     public WebElement searchInstType;
 
-    @FindBy(xpath = "//md-option[@id='select_option_195']")
+    @FindBy(xpath = "//md-option[@id='select_option_196']")
     public WebElement searchInstTypeN1;
 
-    @FindBy(xpath = "//md-select-value[@id='select_value_label_81']")
+    @FindBy(xpath = "//md-select-value[@id='select_value_label_82']")
     public WebElement searchMachType;
 
     @FindBy(xpath = "//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']")
@@ -45,22 +45,22 @@ public class CalcPage extends AbstractPage {
     @FindBy(xpath = "//div[@id=//md-select[@placeholder='Number of GPUs']/@aria-owns]//md-option[@value='1']")
     public WebElement gpuNum1;
 
-    @FindBy(xpath = "//md-select-value[@id='select_value_label_409']")
+    @FindBy(xpath = "//md-select-value[@id='select_value_label_413']")
     public WebElement ssd;
 
-    @FindBy(xpath = "//md-option[@id='select_option_436']//div[@class='md-text ng-binding']")
+    @FindBy(xpath = "//md-option[@id='select_option_440']//div[@class='md-text ng-binding']")
     public WebElement ssd2375;
 
-    @FindBy(xpath = "//md-select[@id='select_118']")
+    @FindBy(xpath = "//md-select[@id='select_119']")
     public WebElement datacenter;
 
-    @FindBy(xpath = "//md-option[@id='select_option_220']")
+    @FindBy(xpath = "//md-option[@id='select_option_222']")
     public WebElement datacenterFrankfurt;
 
-    @FindBy(xpath = "//md-select[@id='select_125']")
+    @FindBy(xpath = "//md-select[@id='select_126']")
     public WebElement usage;
 
-    @FindBy(xpath = "//md-option[@id='select_option_123']")
+    @FindBy(xpath = "//md-option[@id='select_option_124']")
     public WebElement cu1year;
 
     @FindBy(xpath = "(//button[@class='md-raised md-primary cpc-button md-button md-ink-ripple'])[1]")
@@ -69,7 +69,7 @@ public class CalcPage extends AbstractPage {
     public CalcPage waitLoad() {
         driver.switchTo().frame(driver.findElement(By.xpath("//article[@id='cloud-site']/devsite-iframe/iframe")));
         driver.switchTo().frame("myFrame");
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='input_85']")));
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='input_86']")));
         driver.switchTo().defaultContent();
         return this;
     }
@@ -95,13 +95,13 @@ public class CalcPage extends AbstractPage {
         return this;
     }
         public CalcPage searchInstType1() {
-            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//md-select-value[@id='select_value_label_80']")));
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//md-select-value[@id='select_value_label_81']")));
         scrollTo(searchInstType);
             searchInstType.click();
             return this;
     }
         public CalcPage searchInstTypeN11() {
-            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//md-option[@id='select_option_195']")));
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//md-option[@id='select_option_196']")));
             searchInstTypeN1.click();
             return this;
         }
@@ -154,7 +154,7 @@ public class CalcPage extends AbstractPage {
         return this;
     }
     public CalcPage datacenterFrankfurt1() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//md-option[@id='select_option_220']"))).click();
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//md-option[@id='select_option_222']"))).click();
         //scrollTo(datacenterFrankfurt);
         //datacenterFrankfurt.click();
         return this;
